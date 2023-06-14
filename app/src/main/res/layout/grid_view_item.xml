@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="photo"
+            type="com.example.android.marsphotos.network.Colors" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="95dp">
+        <androidx.cardview.widget.CardView
+
+
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:id="@+id/imageview1"
+            app:cardCornerRadius="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+
+            <ImageView
+                android:id="@+id/mars_image"
+                android:layout_width="60dp"
+                android:scaleType="centerCrop"
+                android:layout_height="60dp"
+                android:src="@mipmap/ic_launcher_round"
+                app:imageUrl="@{photo.imgSrcUrl}"
+                tools:src="@tools:sample/backgrounds/scenic"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="@{photo.nama}"
+            android:textColor="#000000"
+            android:layout_toRightOf="@id/imageview1"
+            android:id="@+id/nama"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp">
+
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:id="@+id/nim"
+            android:layout_toRightOf="@id/imageview1"
+            android:layout_below="@+id/nama"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@{photo.nim}">
+
+        </TextView>
+
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
